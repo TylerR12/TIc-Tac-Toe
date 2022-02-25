@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styleV2.css">
+    <script src="javascript/index.js"></script>
+    <script src="javascript/lighting.js"></script>
+
+</head>
+<body>
+    <section class="title">
+        <h1 id="">Tic-Tac-Toe</h1>
+    </section> 
+    
+    <section class="display-turn annonce-winner">
+        <!-- <h2> It's Player <span id="current"></span>'s turn</h2> -->
+        <input type="text" id="currents" placeholder="X" readonly>
+    </section>
+
+    <section class="board" id="board">
+        <div class="tile one" onclick="tileOne()" >
+        <input type="text" id="one"readonly>
+        </div>
+
+        <div class="tile two" onclick="tileTwo()" >
+            <input type="text" id="two"readonly>
+        </div>
+
+        <div class="tile three" onclick="tileThree()" >
+            <input type="text" id="three"readonly>
+        </div>
+
+        <div class="tile four" onclick="tileFour()" >
+            <input type="text" id="four"readonly>
+        </div>
+
+        <div class="tile five" onclick="tileFive()" >
+            <input type="text" id="five"readonly>
+        </div>
+
+        <div class="tile six" onclick="tileSix()" >
+            <input type="text" id="six"readonly>
+        </div>
+
+        <div class="tile seven" onclick="tileSeven()" >
+            <input type="text" id="seven"readonly>
+        </div>
+        <div class="tile eight" onclick="tileEight()" >
+            <input type="text" id="eight"readonly>
+        </div>
+        
+        <div class="tile nine" onclick="tileNine()" >
+        <input type="text" id="nine"readonly>
+        </div>
+        
+    </section>
+
+    <section class="row">
+        <div class="scores">
+        <input type="text" id="winner"  readonly>
+            <h2>Player 1: <input type="number" id="playerOne" value="0" readonly></h2>
+            <h2>Player 2: <input type="number" id="playerTwo" value="0" readonly></h2>
+            </div>
+        <div class="controls">
+            <div class="reset" onclick="clr()">
+                <img class="reset-img" src="images/reset.svg" alt="reset">
+                <!-- <img class="dark-mode" src="images/moon.svg" alt="dark_mode"> -->
+            </div>
+            <!-- <div onclick="mode()">
+                <img class="light-mode" src="images/sun.svg" alt="light_mode">
+            </div> -->
+        <!-- <button onclick="clr()">Reset</button> -->
+        </div>
+
+    </section>
+
+</body>
+</html>

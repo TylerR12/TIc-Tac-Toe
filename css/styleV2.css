@@ -1,0 +1,167 @@
+
+body{
+    /* background: linear-gradient(to right, #00AAFF, #cf2222); */
+    /* background-color: black; */
+    /* background-color: rgb(216, 216, 216); */
+    background-color: #202124;
+    margin: 0;
+}
+
+
+.board{
+    max-width: 450px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #202124;
+    /* background-color: grey; */
+    /* background-color: transparent; */
+    padding: 1px;
+    /* box-shadow: inset 0px 0px 0.01em 0.1em white; */
+
+}
+
+section{
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* side by side */
+/* .scores, .controls{
+    float: left;
+    width: 50%;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  } */
+
+.tile{
+    /* background-color: rgba(255, 255, 255, 0.85); */
+    background-color: rgba(56, 56, 56, 0.7);
+    /* background-color: black; */
+    /* border: 2px solid rgba(0, 0, 0, 0.8); */
+    /* border: 2px solid grey; */
+    border: 2px solid #202124;
+    border-radius: 15px;
+    padding: 0px;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+    /* font-family: 'Itim', cursive; */
+}
+
+.tile:hover{
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    background-color: rgba(56, 56, 56, 0.5);
+}
+
+/* .p1::before{
+    content: "X";
+    font-size: 30px;
+}
+
+.p2::before{
+    content: "O";
+    font-size: 30px;
+} */
+
+input[type="text"]{
+    font-family: Open Sans; 
+    height: 130px;
+    width: 130px;
+    text-align: center;
+    font-size: 45px;
+    border-style: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    color: white;
+}
+
+.tile input[type="text"]{
+    font-size: 100px;
+}
+
+input[type="number"]{
+    margin: auto 0;
+    height: 22px;
+    width: 50px;
+    text-align: center;
+    background-color: transparent;
+    border-style: none;
+    font-size: 20px;
+    color: white;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+
+    color: white;
+}
+
+h1{
+    color: white;
+    font-size: 35px;
+}
+
+.tile input[type="text"]{
+    /* color: #202124; */
+    color: white;
+}
+
+
+
+#winner{
+    width: 400px;
+}
+
+::placeholder{
+    /* color: black; */
+    color: white;
+}
+
+button:hover{
+    background-color: rgba(56, 56, 56, 0.5);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.controls{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 25px;
+}
+
+.reset{
+    padding: 0 10px;
+}
+
+.reset-img{
+    cursor:pointer; 
+    height: 35px;
+    width: 35px;
+}
+
+.light-mode{
+    cursor: pointer;
+    height: 35px;
+    fill: white;
+}
+
+
+.dark-mode{
+    cursor: pointer;
+    height: 35px;
+}
+
+
+#dark-theme{
+    color: white;
+
+}
+
+#light-theme{
+    color: #202124;
+}
+

@@ -1,0 +1,104 @@
+
+body{
+    /* background: linear-gradient(to right, #00AAFF, #cf2222); */
+    /* background-color: black; */
+    background-color: white;
+}
+
+
+.board{
+    max-width: 450px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: grey;
+    /* background-color: transparent; */
+    padding: 1px;
+    box-shadow: inset 0px 0px 0.01em 0.1em white;
+
+}
+
+section{
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* side by side */
+/* .scores, .controls{
+    float: left;
+    width: 50%;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  } */
+
+.tile{
+    background-color: rgba(255, 255, 255, 0.85);
+    /* background-color: black; */
+    /* border: 2px solid rgba(0, 0, 0, 0.8); */
+    border: 2px solid white;
+    padding: 0px;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+    /* font-family: 'Itim', cursive; */
+}
+
+.tile:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* .p1::before{
+    content: "X";
+    font-size: 30px;
+}
+
+.p2::before{
+    content: "O";
+    font-size: 30px;
+} */
+
+input[type="text"]{
+    height: 130px;
+    width: 130px;
+    text-align: center;
+    font-size: 45px;
+    border-style: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+input[type="number"]{
+    margin: auto 0;
+    height: 22px;
+    width: 50px;
+    text-align: center;
+    border-style: none;
+    font-size: 20px;
+
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+}
+
+
+/* .currentTXT{
+    height: 300px;
+    width: 300px;
+} */
+
+
+#winner{
+    width: 400px;
+}
+
+::placeholder{
+    color: black;
+}
+
+button{
+    cursor: pointer;
+}
