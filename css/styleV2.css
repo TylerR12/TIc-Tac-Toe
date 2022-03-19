@@ -322,6 +322,9 @@ button:hover{
         font-size: 15px;
         text-align: center;
         cursor: pointer;
+        display: flex;
+        justify-content: center;
+        text-align: center;
         /* font-family: 'Itim', cursive; */
     }
     .tile input[type="text"]{
