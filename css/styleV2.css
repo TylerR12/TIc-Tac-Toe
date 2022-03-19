@@ -282,6 +282,8 @@ button:hover{
         border-radius: 15px;
         padding: 0px;
         font-size: 15px;
+        display: flex;
+        justify-content: center;
         text-align: center;
         cursor: pointer;
         /* font-family: 'Itim', cursive; */
