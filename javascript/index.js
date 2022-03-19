@@ -44,6 +44,31 @@ function changePlayer(){
     console.log(currentChange.value);
 }
 
+function randomizePlayer(){
+    var currentChange = document.getElementById("currents");
+    // currentChange.value = "X";
+    let rand = Math.floor(Math.random() * 2);
+
+    if (rand == 0){
+        currentPlayer = 'X';
+    }
+    else if (rand == 1){
+        currentPlayer = 'O';
+    }
+    else{
+        currentPlayer = 'X';
+    }
+
+    currentChange.value = currentPlayer;
+
+}
+
+function waitReset(){
+    var currentChange = document.getElementById("currents");
+    currentChange.value = "";
+    currentPlayer = '';
+
+}
 
 function winner(win){
 
@@ -51,42 +76,42 @@ function winner(win){
 
 
     if(board[0] == board[3] && board[0] == board[6] && board[0] != '' ){
-        console.log("winner 036");
+        // console.log("winner 036");
         win = 1;
     }
 
     else if(board[0] == board[1] && board[0] == board[2] && board[0] != '' ){
-        console.log("winner 012");
+        // console.log("winner 012");
         win = 1;
     }
 
     else if(board[0] == board[4] && board[0] == board[8] && board[0] != '' ){
-        console.log("winner 048");
+        // console.log("winner 048");
         win = 1;
     }
 
     else if(board[1] == board[4] && board[1] == board[7] && board[1] != '' ){
-        console.log("winner 147");
+        // console.log("winner 147");
         win = 1;
     }
 
     else if(board[2] == board[5] && board[2] == board[8] && board[2] != '' ){
-        console.log("winner 258");
+        // console.log("winner 258");
         win = 1;
     }
 
     else if(board[2] == board[4] && board[2] == board[6] && board[2] != '' ){
-        console.log("winner 246");
+        // console.log("winner 246");
         win = 1;
     }
 
     else if(board[3] == board[4] && board[3] == board[5] && board[3] != '' ){
-        console.log("winner 345");
+        // console.log("winner 345");
         win = 1;
     }
 
     else if(board[6] == board[7] && board[6] == board[8] && board[6] != '' ){
-        console.log("winner 678");
+        // console.log("winner 678");
         win = 1;
     }
 
@@ -96,32 +121,11 @@ function winner(win){
     }
 
     else{
-        console.log("no winner");
+        // console.log("no winner");
         win = 0;
     }
 
-    // console.log("im here");
-    // var i=0;
-    // for(i; i < 9; i++){
-    //     console.log(i);
-
-    //     if(board[i]!=""){
-            
-    //         console.log("inside loop:"+i);
-    //         var j;
-    //         j++;
-    //         // console.log("not tie");
-    //         if(j==8){
-    //             win = 2;
-    //         }
-    //     }
-    //     else{
-    //         // console.log("tie");
-    //         // win = 2;
-    //     }
-    // }
-
-    console.log("return:" +win);
+    // console.log("return:" +win);
     return win;
 
 }
@@ -151,6 +155,7 @@ function clr(){
 
     var annouce = document.getElementById("winner");
     annouce.value = "";
+    randomizePlayer();
 
     console.log(board);
 
@@ -163,12 +168,13 @@ function announce(){
     var annouce = document.getElementById("winner");
     annouce.value = currentPlayer+" Wins";
     tally();
-
+    waitReset();
 }
 
 function announceTie(){
     var annouce = document.getElementById("winner");
     annouce.value = "Tie";
+    waitReset();
 
 }
 
@@ -193,94 +199,102 @@ function tally(){
 
 
 function tileOne(){
-
-    var one = document.getElementById("one");
-    var x = currentPlayer;
-    // var win = 0;
-    // changePlayer();
-    console.log(x);
-    board[0] = x;
-    one.value = x;
-    console.log(board);
-    var wins = winner();
-
-    console.log("win value:" +wins);
-
-    if(wins == 1){
-        console.log("Winning move");
-        announce();
+    if(board[0] == ""){
+        var one = document.getElementById("one");
+        var x = currentPlayer;
+        // var win = 0;
+        // changePlayer();
+        console.log(x);
+        board[0] = x;
+        one.value = x;
+        console.log(board);
+        var wins = winner();
+    
+        console.log("win value:" +wins);
+    
+        if(wins == 1){
+            console.log("Winning move");
+            announce();
+        }
+        else if(wins > 1){
+            console.log("Tie");
+            announceTie();
+        }
+        else{
+            // console.log("not winnning move");
+            changePlayer();
+        }
     }
-    else if(wins > 1){
-        console.log("Tie");
-        announceTie();
-    }
-    else{
-        // console.log("not winnning move");
-        changePlayer();
-    }
+    else{}
 
 }
 
 function tileTwo(){
 
-    var two = document.getElementById("two");
-    var x = currentPlayer;
-    var win;
-    // changePlayer();
-    console.log(x);
-    board[1] = x;
-    two.value = x;
-    console.log(board);
-    var wins = winner();
+    if(board[1] == ""){
+        var two = document.getElementById("two");
+        var x = currentPlayer;
+        var win;
+        // changePlayer();
+        console.log(x);
+        board[1] = x;
+        two.value = x;
+        console.log(board);
+        var wins = winner();
+    
+        console.log("win value:" +wins);
+    
+        if(wins == 1){
+            console.log("Winning move");
+            announce();
+        }
+        else if(wins > 1){
+            console.log("Tie");
+            announceTie();
+        }
+        else{
+            // console.log("not winnning move");
+            changePlayer();
+        }
+    }
+    else{}
 
-    console.log("win value:" +wins);
-
-    if(wins == 1){
-        console.log("Winning move");
-        announce();
-    }
-    else if(wins > 1){
-        console.log("Tie");
-        announceTie();
-    }
-    else{
-        // console.log("not winnning move");
-        changePlayer();
-    }
 
 }
 
 function tileThree(){
-
-    var three = document.getElementById("three");
-    var x = currentPlayer;
-    var win;
-    // changePlayer();
-    console.log(x);
-    board[2] = x;
-    three.value = x;
-    console.log(board);
-    var wins = winner();
-
-    console.log("win value:" +wins);
-
-    if(wins == 1){
-        console.log("Winning move");
-        announce();
+    if(board[2] == ""){
+        var three = document.getElementById("three");
+        var x = currentPlayer;
+        var win;
+        // changePlayer();
+        console.log(x);
+        board[2] = x;
+        three.value = x;
+        console.log(board);
+        var wins = winner();
+    
+        console.log("win value:" +wins);
+    
+        if(wins == 1){
+            console.log("Winning move");
+            announce();
+        }
+        else if(wins > 1){
+            console.log("Tie");
+            announceTie();
+        }
+        else{
+            // console.log("not winnning move");
+            changePlayer();
+        }
     }
-    else if(wins > 1){
-        console.log("Tie");
-        announceTie();
-    }
-    else{
-        // console.log("not winnning move");
-        changePlayer();
-    }
+    else{}
 
 }
 
 function tileFour(){
-
+    if(board[3] == ""){
     var four = document.getElementById("four");
     var win;
     var x = currentPlayer;
@@ -305,150 +319,165 @@ function tileFour(){
         // console.log("not winnning move");
         changePlayer();
     }
+    }
+    else{}
+
 
 }
 
 function tileFive(){
-
-    var five = document.getElementById("five");
-    var x = currentPlayer;
-    var win;
-    // changePlayer();
-    console.log(x);
-    board[4] = x;
-    five.value = x;
-    console.log(board);
-        var wins = winner();
-
-    console.log("win value:" +wins);
-
-    if(wins == 1){
-        console.log("Winning move");
-        announce();
+    if(board[4] == ""){
+        var five = document.getElementById("five");
+        var x = currentPlayer;
+        var win;
+        // changePlayer();
+        console.log(x);
+        board[4] = x;
+        five.value = x;
+        console.log(board);
+            var wins = winner();
+    
+        console.log("win value:" +wins);
+    
+        if(wins == 1){
+            console.log("Winning move");
+            announce();
+        }
+        else if(wins > 1){
+            console.log("Tie");
+            announceTie();
+        }
+        else{
+            // console.log("not winnning move");
+            changePlayer();
+        }
     }
-    else if(wins > 1){
-        console.log("Tie");
-        announceTie();
-    }
-    else{
-        // console.log("not winnning move");
-        changePlayer();
-    }
+    else{}
 
 }
 
 function tileSix(){
-
-    var six = document.getElementById("six");
-    var x = currentPlayer;
-    var win;
-    // changePlayer();
-    console.log(x);
-    board[5] = x;
-    six.value = x;
-    console.log(board);
-        var wins = winner();
-
-    console.log("win value:" +wins);
-
-    if(wins == 1){
-        console.log("Winning move");
-        announce();
+    if(board[5] == ""){
+        var six = document.getElementById("six");
+        var x = currentPlayer;
+        var win;
+        // changePlayer();
+        console.log(x);
+        board[5] = x;
+        six.value = x;
+        console.log(board);
+            var wins = winner();
+    
+        console.log("win value:" +wins);
+    
+        if(wins == 1){
+            console.log("Winning move");
+            announce();
+        }
+        else if(wins > 1){
+            console.log("Tie");
+            announceTie();
+        }
+        else{
+            // console.log("not winnning move");
+            changePlayer();
+        }
     }
-    else if(wins > 1){
-        console.log("Tie");
-        announceTie();
-    }
-    else{
-        // console.log("not winnning move");
-        changePlayer();
-    }
+    else{}
 
 }
 
 function tileSeven(){
-
-    var seven = document.getElementById("seven");
-    var x = currentPlayer;
-    var win;
-    // changePlayer();
-    console.log(x);
-    board[6] = x;
-    seven.value = x;
-    console.log(board);
-        var wins = winner();
-
-    console.log("win value:" +wins);
-
-    if(wins == 1){
-        console.log("Winning move");
-        announce();
+    if(board[6] == ""){
+        var seven = document.getElementById("seven");
+        var x = currentPlayer;
+        var win;
+        // changePlayer();
+        console.log(x);
+        board[6] = x;
+        seven.value = x;
+        console.log(board);
+            var wins = winner();
+    
+        console.log("win value:" +wins);
+    
+        if(wins == 1){
+            console.log("Winning move");
+            announce();
+        }
+        else if(wins > 1){
+            console.log("Tie");
+            announceTie();
+        }
+        else{
+            // console.log("not winnning move");
+            changePlayer();
+        }
     }
-    else if(wins > 1){
-        console.log("Tie");
-        announceTie();
-    }
-    else{
-        // console.log("not winnning move");
-        changePlayer();
-    }
+    else{}
 
 }
 
 function tileEight(){
-
-    var eight = document.getElementById("eight");
-    var x = currentPlayer;
-    var win;
-    // changePlayer();
-    console.log(x);
-    board[7] = x;
-    eight.value = x;
-    console.log(board);
-        var wins = winner();
-
-    console.log("win value:" +wins);
-
-    if(wins == 1){
-        console.log("Winning move");
-        announce();
+    if(board[7] == ""){
+        var eight = document.getElementById("eight");
+        var x = currentPlayer;
+        var win;
+        // changePlayer();
+        console.log(x);
+        board[7] = x;
+        eight.value = x;
+        console.log(board);
+            var wins = winner();
+    
+        console.log("win value:" +wins);
+    
+        if(wins == 1){
+            console.log("Winning move");
+            announce();
+        }
+        else if(wins > 1){
+            console.log("Tie");
+            announceTie();
+        }
+        else{
+            // console.log("not winnning move");
+            changePlayer();
+        }
     }
-    else if(wins > 1){
-        console.log("Tie");
-        announceTie();
-    }
-    else{
-        // console.log("not winnning move");
-        changePlayer();
-    }
+    else{}
+
+
 
 }
 
 function tileNine(){
-
-    var nine = document.getElementById("nine");
-    var x = currentPlayer;
-    var win;
-    // changePlayer();
-    console.log(x);
-    board[8] = x;
-    nine.value = x;
-    console.log(board);
-        var wins = winner();
-
-    console.log("win value:" +wins);
-
-    if(wins == 1){
-        console.log("Winning move");
-        announce();
+    if(board[8] == ""){
+        var nine = document.getElementById("nine");
+        var x = currentPlayer;
+        var win;
+        // changePlayer();
+        console.log(x);
+        board[8] = x;
+        nine.value = x;
+        console.log(board);
+            var wins = winner();
+    
+        console.log("win value:" +wins);
+    
+        if(wins == 1){
+            console.log("Winning move");
+            announce();
+        }
+        else if(wins > 1){
+            console.log("Tie");
+            announceTie();
+        }
+        else{
+            // console.log("not winnning move");
+            changePlayer();
+        }
     }
-    else if(wins > 1){
-        console.log("Tie");
-        announceTie();
-    }
-    else{
-        // console.log("not winnning move");
-        changePlayer();
-    }
+    else{}
 
 }

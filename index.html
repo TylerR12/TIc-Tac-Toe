@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/styleV2.css">
     <script src="javascript/index.js"></script>
     <script src="javascript/lighting.js"></script>
+    <script src="javascript/instruction.js"></script>
+
 
 </head>
 <body>
@@ -69,13 +71,34 @@
                 <img class="reset-img" src="images/reset.svg" alt="reset">
                 <!-- <img class="dark-mode" src="images/moon.svg" alt="dark_mode"> -->
             </div>
-            <!-- <div onclick="mode()">
-                <img class="light-mode" src="images/sun.svg" alt="light_mode">
-            </div> -->
+            <!-- <div onclick="open()" class="open-info">I</div> -->
+            <div onclick="open_overlay()">
+                <!-- <img class="light-mode" src="images/sun.svg" alt="light_mode"> -->
+                <img class="info-mode" src="images/info-icon.svg" alt="instruction">
+
+            </div>
         <!-- <button onclick="clr()">Reset</button> -->
         </div>
 
     </section>
+    <div id="overlay" class="overlay"></div>
+    <div id="info-display" class="info-display">
+        <div class="padding">        
+            <h1 class="instruction-title">Instructions</h1>
+            <p>The object of Tic Tac Toe is to get three in a row. </br></br> 
+                The first player is known as X and the second is O. Players alternate placing Xs and Os on the board until either player 
+                has three in a row or all nine squares are filled. In the event that neither player has three in a row and all squares have been filled, 
+                the round ends in a tie or also known as a cat game.
+            </p>
+            <b class="example-txt">Example</b>
+            <br><br>
+            <img class="example-img" src="images/example-one.png" alt="example image">
+            <p>X is the winner in this example, as that player got three in a row first.
+            </p>
+        </div>
+        <div onclick="close_overlay()" class="close"> &#x2715; </div>
+
+    </div>
 
 </body>
 </html>
