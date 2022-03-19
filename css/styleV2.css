@@ -323,7 +323,7 @@ button:hover{
         text-align: center;
         cursor: pointer;
         /* display: -webkit-flex; */
-        display: inline;
+        display: flex;
         justify-content: center;
         text-align: center;
         /* font-family: 'Itim', cursive; */
